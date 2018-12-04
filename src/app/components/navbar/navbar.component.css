@@ -1,0 +1,11 @@
+img.rounded-circle{
+  width: 45px;
+  height: 45px;
+}
+.logo{
+  width: 100px;
+  border-radius: 5px;
+}
+a{
+  color: white;
+}

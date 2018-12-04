@@ -36,6 +36,7 @@ import { FirstPageComponent } from './components/first-page/first-page.component
 import { DreamComponent } from './components/dream/dream.component';
 import { DreamRegisterComponent } from './components/dream-register/dream-register.component';
 import { DreamStatusComponent } from './components/dream-status/dream-status.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { DreamStatusComponent } from './components/dream-status/dream-status.com
     FirstPageComponent,
     DreamComponent,
     DreamRegisterComponent,
-    DreamStatusComponent
+    DreamStatusComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
