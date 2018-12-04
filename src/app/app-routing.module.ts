@@ -9,6 +9,9 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
 import { SubmitComponent } from './components/submit/submit.component';
 import { Submit2Component } from './components/submit2/submit2.component';
 import { FirstPageComponent } from './components/first-page/first-page.component';
+import { DreamComponent } from './components/dream/dream.component';
+import { DreamRegisterComponent } from './components/dream-register/dream-register.component';
+import { DreamStatusComponent } from './components/dream-status/dream-status.component';
 
 const routes: Routes = [
   {path:'', component: StartComponent},
@@ -16,7 +19,10 @@ const routes: Routes = [
   {path: 'submit', component:SubmitComponent},
   {path: 'submit2', component:Submit2Component},
   {path: 'confirmation', component:ConfirmationComponent},
-  {path: 'first-page', component:FirstPageComponent}
+  {path: 'first-page', component:FirstPageComponent},
+  {path: 'dream', component:DreamComponent},
+  {path: 'dreamStatus', component:DreamStatusComponent},
+  {path: 'dreamRegister', component:DreamRegisterComponent},
 ];
 @NgModule({
   imports:
