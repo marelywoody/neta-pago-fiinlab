@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CodeQrComponent implements OnInit {
 
-  ngxQrcode2 = 'www.google.com.mx';
+  ngxQrcode2 = 'https://www.google.com.mx';
 
   constructor() { }
 
