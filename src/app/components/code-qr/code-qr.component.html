@@ -1,10 +1,11 @@
 <div class="container">
-  <div class="row">
-    <div class="col-12 d-flex justify-content-center title">
-      <p class="h3">Escanea el código</p>
+    <div class="row mx-auto mt-5">
+        <div class="col-12 d-flex justify-content-center title">
+        <p class="h3">Escanea el código</p>
+      </div>
+      <div class="col-12 d-flex justify-content-center">
+        <ngx-qrcode id="qr" qrc-element-type="url" [qrc-value]="ngxQrcode2" ></ngx-qrcode>
+      </div>
     </div>
-    <div class="col-12 d-flex justify-content-center">
-      <ngx-qrcode id="qr" qrc-element-type="url" [qrc-value]="ngxQrcode2" ></ngx-qrcode>
-    </div>
-  </div>
+
 </div>

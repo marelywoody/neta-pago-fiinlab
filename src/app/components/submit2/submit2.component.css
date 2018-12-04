@@ -31,3 +31,8 @@ img{
     color: white;
     border-color: black;
 }
+
+#link {
+  text-decoration: none;
+  color: #ffffff;
+}
