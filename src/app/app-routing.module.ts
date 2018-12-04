@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { StartComponent } from './components/start/start.component';
 import { CodeQrComponent } from './components/code-qr/code-qr.component';
-import { from } from 'rxjs';
+// import { from } from 'rxjs';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { SubmitComponent } from './components/submit/submit.component';
 import { Submit2Component } from './components/submit2/submit2.component';
