@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CodeQrComponent implements OnInit {
 
+  ngxQrcode2 = 'https://www.npmjs.com/package/ngx-qrcode2';
+  
   constructor() { }
 
   ngOnInit() {
