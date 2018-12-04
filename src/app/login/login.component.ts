@@ -1,53 +1,58 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
-
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
-import { isError } from 'util';
-import { NgForm } from '@angular/forms/src/directives/ng_form';
+import { AuthService } from './../shared/auth.service';
+import { Component, Input } from '@angular/core';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-// export class LoginComponent implements OnInit {
-//   constructor(private authService: AuthService, private router: Router, private location: Location) { }
-//   private user: UserInterface = {
-//     email: '',
-//     password: ''
-//   };
-//   public isError = false;
+export class LoginComponent {
+  hide = true;
 
-//   ngOnInit() { }
+  @Input()
+  id: string;
+  errorMessage: string;
+  loginForm: FormGroup;
+  email;
 
-//   onLogin(form: NgForm) {
-//     if (form.valid) {
-//       return this.authService
-//         .loginuser(this.user.email, this.user.password)
-//         .subscribe(
-//         data => {
-//           this.authService.setUser(data.user);
-//           const token = data.id;
-//           this.authService.setToken(token);
-//           this.router.navigate(['/user/profile']);
-//           location.reload();
-//           this.isError = false;
-//         },
-//         error => this.onIsError()
-//         );
-//     } else {
-//       this.onIsError();
-//     }
-//   }
+  // MD-Bootstrap Form--a
+  constructor(
+    private fb: FormBuilder,
+    public authService: AuthService,
+    private router: Router
+  ) {
+    this.loginForm = fb.group({
+      email: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+  }
 
-//   onIsError(): void {
-//     this.isError = true;
-//     setTimeout(() => {
-//       this.isError = false;
-//     }, 4000);
-//   }
+  createForm() {
+    this.loginForm = this.fb.group({
+      email: ['', Validators.required]
+    });
+  }
 
+  getErrorMessage() {
+    return this.email.hasError('required')
+      ? 'Debes de ingresar un correo válido.'
+      : this.email.hasError('email')
+        ? 'No es un correo valido.'
+        : '';
+  }
 
-// tslint:disable-next-line:eofline
-// }
+  tryLogin(value) {
+    this.authService.doLogin(value).then(
+      res => {
+        this.router.navigate(['/muro']);
+      },
+      err => {
+        console.log(err);
+        this.errorMessage = err.message;
+      }
+    );
+  }
+
+}
