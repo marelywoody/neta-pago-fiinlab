@@ -19,7 +19,6 @@ import { MuroComponent } from './components/muro/muro.component';
 // import { UserComponent } from './user/user.component';
 import { LoginComponent } from './components/login/login.component';
 // import { RegisterComponent } from './register/register.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 
 const routes: Routes = [
   {path:'', component: StartComponent},
@@ -31,8 +30,7 @@ const routes: Routes = [
   {path: 'dreamStatus', component:DreamStatusComponent},
   {path: 'dreamRegister', component:DreamRegisterComponent},
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard] }, // p
-  { path: 'first-page', component: FirstPageComponent, resolve: { data: UserResolver }},
-  {path: 'navbar', component: NavbarComponent }
+  { path: 'first-page', component: FirstPageComponent, resolve: { data: UserResolver }}
    // {path: 'first-page', component: FirstPageComponent}
 
 ];
