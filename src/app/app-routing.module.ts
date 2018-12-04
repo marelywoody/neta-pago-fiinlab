@@ -13,16 +13,30 @@ import { DreamComponent } from './components/dream/dream.component';
 import { DreamRegisterComponent } from './components/dream-register/dream-register.component';
 import { DreamStatusComponent } from './components/dream-status/dream-status.component';
 
+import { AuthGuard } from './shared/auth.guard'; // p
+import { UserResolver } from './shared/user.resolver'; // p
+import { MuroComponent } from './components/muro/muro.component';
+
+// import { UserComponent } from './user/user.component';
+import { LoginComponent } from './components/login/login.component';
+// import { RegisterComponent } from './register/register.component';
+
+
+
 const routes: Routes = [
   {path:'', component: StartComponent},
   {path:'qr', component: CodeQrComponent},
   {path: 'submit', component:SubmitComponent},
   {path: 'submit2', component:Submit2Component},
   {path: 'confirmation', component:ConfirmationComponent},
-  {path: 'first-page', component:FirstPageComponent},
   {path: 'dream', component:DreamComponent},
   {path: 'dreamStatus', component:DreamStatusComponent},
   {path: 'dreamRegister', component:DreamRegisterComponent},
+  { path: 'login', component: LoginComponent, canActivate: [AuthGuard] }, // p
+  { path: 'first-page', component: FirstPageComponent, resolve: { data: UserResolver } },
+
+   // {path: 'first-page', component: FirstPageComponent}
+
 ];
 @NgModule({
   imports:
