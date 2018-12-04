@@ -33,6 +33,9 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
 import { SubmitComponent } from './components/submit/submit.component';
 import { Submit2Component } from './components/submit2/submit2.component';
 import { FirstPageComponent } from './components/first-page/first-page.component';
+import { DreamComponent } from './components/dream/dream.component';
+import { DreamRegisterComponent } from './components/dream-register/dream-register.component';
+import { DreamStatusComponent } from './components/dream-status/dream-status.component';
 
 
 @NgModule({
@@ -45,7 +48,10 @@ import { FirstPageComponent } from './components/first-page/first-page.component
     ConfirmationComponent,
     SubmitComponent,
     Submit2Component,
-    FirstPageComponent
+    FirstPageComponent,
+    DreamComponent,
+    DreamRegisterComponent,
+    DreamStatusComponent
   ],
   imports: [
     BrowserModule,
