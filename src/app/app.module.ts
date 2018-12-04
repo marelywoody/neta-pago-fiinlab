@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { SubmitComponent } from './components/submit/submit.component';
 import { Submit2Component } from './components/submit2/submit2.component';
+import { FirstPageComponent } from './components/first-page/first-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { Submit2Component } from './components/submit2/submit2.component';
     CodeQrComponent,
     ConfirmationComponent,
     SubmitComponent,
-    Submit2Component
+    Submit2Component,
+    FirstPageComponent
   ],
   imports: [
     BrowserModule,
