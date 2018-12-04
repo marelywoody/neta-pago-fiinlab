@@ -1,6 +1,6 @@
-import { AuthService } from './../shared/auth.service';
-import { UserService } from './../shared/user.service';
-import { FirebaseUserModel } from './../shared/user.model';
+import { AuthService } from '../../shared/auth.service';
+import { UserService } from '../../shared/user.service';
+import { FirebaseUserModel } from '../../shared/user.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';

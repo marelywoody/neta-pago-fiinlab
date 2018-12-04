@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { AuthService } from './../shared/auth.service';
+import { AuthService } from '../../shared/auth.service';
 import { Component, Input } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
@@ -46,7 +46,7 @@ export class LoginComponent {
   tryLogin(value) {
     this.authService.doLogin(value).then(
       res => {
-        this.router.navigate(['/muro']);
+        this.router.navigate(['/first-page']);
       },
       err => {
         console.log(err);

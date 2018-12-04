@@ -1,33 +1,45 @@
-// import { NgModule } from '@angular/core';
-// import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
 
-// const routes: Routes = [];
-
-// @NgModule({
-//   imports: [RouterModule.forRoot(routes)],
-//   exports: [RouterModule]
-// })
-// export class AppRoutingModule { }
+import { StartComponent } from './components/start/start.component';
+import { CodeQrComponent } from './components/code-qr/code-qr.component';
+// import { from } from 'rxjs';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+import { SubmitComponent } from './components/submit/submit.component';
+import { Submit2Component } from './components/submit2/submit2.component';
+import { FirstPageComponent } from './components/first-page/first-page.component';
 
 import { AuthGuard } from './shared/auth.guard'; // p
 import { UserResolver } from './shared/user.resolver'; // p
-import { MuroComponent } from './muro/muro.component';
+import { MuroComponent } from './components/muro/muro.component';
 
 // import { UserComponent } from './user/user.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
 // import { RegisterComponent } from './register/register.component';
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+
+
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {path: '', component: StartComponent},
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard] }, // p
-  // { path: 'register', component:, canActivate: [AuthGuard] },  // p
-  { path: 'muro', component: MuroComponent, resolve: { data: UserResolver } }  // p
+  { path: 'first-page', component: FirstPageComponent, resolve: { data: UserResolver } },
+  {path: 'qr', component: CodeQrComponent},
+  {path: 'submit', component: SubmitComponent},
+  {path: 'submit2', component: Submit2Component},
+  {path: 'confirmation', component: ConfirmationComponent},
+  // {path: 'first-page', component: FirstPageComponent}
 ];
-
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports:
+  [
+    CommonModule,
+    RouterModule.forRoot(routes)
+  ],
+  exports:
+    [
+      RouterModule
+    ],
+  declarations: []
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
