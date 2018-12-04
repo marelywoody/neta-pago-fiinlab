@@ -13,13 +13,9 @@ import { FirstPageComponent } from './components/first-page/first-page.component
 import { AuthGuard } from './shared/auth.guard'; // p
 import { UserResolver } from './shared/user.resolver'; // p
 import { MuroComponent } from './components/muro/muro.component';
-
 // import { UserComponent } from './user/user.component';
 import { LoginComponent } from './components/login/login.component';
 // import { RegisterComponent } from './register/register.component';
-
-
-
 const routes: Routes = [
   {path: '', component: StartComponent},
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard] }, // p
